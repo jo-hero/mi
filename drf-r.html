@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/niu-grandpa/rabbit-ui@1.6.0/dist/styles/rabbit.css">
+    <style>
+      textarea {
+		      font-size: 14px;
+		      padding: 8px;
+		  }
+		  
+		  input {
+		      padding-left: 8px;
+		  }
+		  
+		  .warning_text {
+		      color: #F22E00
+		  }
+		  
+		  .first_h1 {
+		      width: 100%;
+		      text-align: left;
+		      padding-left: 30px
+		  }
+		  
+		  .content {
+		      padding-right: 15px;
+		      padding-left: 15px;
+		      margin-right: auto;
+		      margin-left: auto;
+		  }
+		  
+		  .content_left_tt {
+		      margin-bottom: 10px;
+		  }
+		  
+		  .content_l {
+		      float: left;
+		  }
+		  
+		  .content_l_col {
+		      position: relative;
+		  }
+		  
+		  .content_l_textarea {
+		      width: 100%;
+		      height: 525px;
+		      float: left;
+		  }
+		  
+		  .content_r {
+		      float: left;
+		      border: #4a4f56 solid 1px;
+		      padding: 10px 10px 10px 0px
+		  }
+		  
+		  .content_r_div1 {
+		      font-size: 16px;
+		      margin-top: 10px
+		  }
+		  
+		  .content_r_list {
+		      font-size: 16px;
+		      margin: 10px 0;
+		      overflow: hidden;
+		  }
+		  
+		  .content_r_li1_numb {
+		      width: 26px;
+		      text-align: center;
+		      display: inline-block;
+		  }
+		  
+		  .content_r_li1,
+		  .content_r_li2,
+		  .content_r_li3 {
+		      float: left;
+		  }
+		  
+		  .content_r_li3 {
+		      line-height: 36px;
+		  }
+		  
+		  .content_r_li1_input {
+		      height: 36px;
+		  }
+		  
+		  @media (min-width: 768px) {
+		      .content_r .rab-btn-success {
+		          margin-left: 20px;
+		      }
+		      .content {
+		          font-size: 32px;
+		      }
+		      .content_r_li1,
+		      .content_r_li2,
+		      .content_r_li3 {
+		          width: 100%;
+		      }
+		      .content,
+		      .content_l_textarea,
+		      input {
+		          font-size: 32px;
+		      }
+		      .content_left_tt {
+		          font-size: 32px;
+		      }
+		      .content_r_li3,
+		      .content_r_li2 {
+		          padding-left: 5px;
+		      }
+		      .content_r_li2 {
+		          margin: 20px 0;
+		      }
+		      .rab-tabs-nav-container {
+		          font-size: 40px;
+		      }
+		      .content_l,
+		      .content_r {
+		          width: 100%;
+		      }
+		      .content_l_col {
+		          padding: 0;
+		      }
+		      .content_l_colr {
+		          position: relative;
+		          line-height: 120px;
+		          float: left;
+		      }
+		      .content_l_colr {
+		          font-size: 32px;
+		      }
+		      .rab-btn-lg,
+		      input,
+		      .rab-btn,
+		      .content_r_li1_input,
+		      .content_r_li3 {
+		          height: 80px;
+		          font-size: 32px;
+		      }
+		      .content_r_li1,
+		      .content_r_li2,
+		      .content_r_li3 {
+		          width: 100%;
+		      }
+		      .content_r_li1,
+		      .rab-btn-success {
+		          font-size: 32px;
+		      }
+		      .content_r_li1_numb {
+		          width: 50px;
+		          float: left;
+		          line-height: 70px;
+		      }
+		      
+		      textarea {
+		          font-size: 32px;
+		      }
+		      .tab2_box_l {
+		          width: 100%;
+		      }
+		      .tab2_box_r {
+		          width: 100%;
+		      }
+		      .tab2_con {
+		          padding: 0 4px;
+		      }
+		      .tab2_box_lc,
+		      .tab2_box_rc {
+		          width: 100%;
+		          margin: 10px 0;
+		      }
+		  }
+		  
+		  @media (min-width: 992px) {
+		      .content_r .rab-btn-success {
+		          margin-left: 0px;
+		      }
+		      .content {
+		          font-size: 14px;
+		      }
+		      textarea {
+		          font-size: 14px;
+		      }
+		      .content {
+		          width: 970px;
+		      }
+		      .content_r_li3 {
+		          padding-left: 30px;
+		      }
+		      .content_r_li1,
+		      .content_r_li2,
+		      .content_r_li3 {
+		          width: inherit;
+		      }
+		      .content,
+		      .content_l_textarea,
+		      input {
+		          font-size: 14px;
+		      }
+		      .content_left_tt {
+		          font-size: 14px;
+		      }
+		      .content_r_li2 {
+		          margin: 0;
+		      }
+		      .rab-tabs-nav-container {
+		          font-size: 14px;
+		      }
+		      .content_l {
+		          width: 30%;
+		      }
+		      .content_r {
+		          width: 70%;
+		      }
+		      .content_l_col {
+		          padding: 0;
+		          padding-right: 160px;
+		          position: relative;
+		      }
+		      .content_l_colr {
+		          line-height: 525px;
+		          float: right;
+		          font-size: 18px;
+		          position: absolute;
+		          top: 0;
+		          right: 20px;
+		      }
+		      .rab-btn-lg,
+		      input,
+		      .rab-btn,
+		      .content_r_li1_input,
+		      .content_r_li3 {
+		          height: 34px;
+		          font-size: 14px;
+		      }
+		      .content_r_li1,
+		      .rab-btn-success {
+		          font-size: 14px;
+		      }
+		      .content_r_li1_numb {
+		          width: 26px;
+		          line-height: 34px;
+		      }
+		      
+		      .tab2_box_l {
+		          width: 30%;
+		      }
+		      .tab2_box_r {
+		          width: 70%;
+		      }
+		      .tab2_con {
+		          padding-right: 176px;
+		      }
+		      .tab2_box_lc,
+		      .tab2_box_rc {
+		          font-size: 20px;
+		          font-weight: bold;
+		          width: 136px;
+		          position: absolute;
+		          top: 50%;
+		          height: 40px;
+		          margin-top: -20px;
+		          right: 20px;
+		      }
+		      .tab2_box_h {
+		          font-size: 15px;
+		      }
+		  }
+		  
+		  @media (min-width: 1200px) {
+		      .content {
+		          width: 1170px;
+		      }
+		      .tab2_box_h {
+		          font-size: 16px;
+		      }
+		  }
+		  
+		  .tab2_box_h {
+		      width: 100%;
+		      margin-bottom: 10px;
+		  }
+		  
+		  .tab2_box_l {
+		      float: left;
+		  }
+		  
+		  .tab2_box_text1 {
+		      width: 100%;
+		      height: 525px
+		  }
+		  
+		  .tab2_box_h2 {
+		      float: right;
+		      margin-top: 250px;
+		      margin-right: 60px
+		  }
+		  
+		  .tab2_box_r {
+		      float: left;
+		  }
+		  
+		  .tab2_con {
+		      position: relative;
+		  }
+		  
+		  .tab2_box_text2 {
+		      width: 100%;
+		      height: 525px
+		  }
+		  
+		  #treeBox {
+					position: absolute;
+					top: 0px;
+					left: 30px;
+			}
+			.treeBox {
+			    position:absolute;
+			    top:50%;
+			    left:0;
+			    background:#fff;
+			    z-index:2;
+			    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+			    border-radius:6px;
+			    color:#555;
+			    display:none;
+			}
+			.treeBox table {
+			    width:100%;
+			    margin:auto;
+			    font-size:0;
+			    overflow:hidden;
+			}
+			.treeBox td {
+			    border:1px solid #ccc;
+			    border-right:none;
+			    padding:8px 0;
+			    vertical-align:top;
+			    overflow:auto;
+			}
+			.treeBox td:last-child {
+			    border-right:1px solid #ccc;
+			}
+			.tree {
+			    overflow:auto;
+			}
+			.tree::-webkit-scrollbar {
+			    display:none;
+			}
+			.treeBox a {
+			    cursor:pointer;
+			    font-size:13px;
+			}
+			.lv1,.lv2 {
+			    display:block;
+			    line-height:32px;
+			}
+			.lv1:hover,.lv2:hover {
+			    background:#f5f5f5;
+			}
+			.tree-active {
+			    background:#a84747;
+			    color:#fff;
+			}
+			.treeBox .tree-active:hover {
+			    background:#a84747;
+			    color:#fff;
+			}
+			.treeBox label {
+			    display:block;
+			    cursor:pointer;
+			    font-size: 13px;
+			    line-height: 32px;
+			}
+			.treeBox label input,.treeBox label span {
+			    vertical-align:middle;
+			}
+			.treeBox label:hover {
+			    background:#f5f5f5;
+			}
+			.lv2-parent{
+			    display:none;
+			}
+			.tree-show {
+			    display:block;
+			}
+			.tree-status {
+			    line-height:44px;
+			    height:44px;
+			    padding:0 16px;
+			    text-align:left;
+			}
+			.tree-send-val {
+			    padding:16px;
+			    text-align:right;
+			}
+			.tree-send-val .tree-btn {
+			    margin-left:12px;
+			}
+			.tree-btn {
+			    display: inline-block;
+			    font-size: 13px;
+			    background: #a84747;
+			    color: #fff;
+			    width: 80px;
+			    line-height: 30px;
+			    border-radius: 4px;
+			    text-align:center;
+			    border:1px solid transparent;
+			}
+			.tree-confirm {
+			    background: #a84747;
+			    color: #fff;
+			    border-color:#a84747;
+			}
+			.tree-close {
+			    background:#fff;
+			    color:#888;
+			    border-color:#ccc;
+			}
+    </style>
+</head>
+​
+
+<body>
+    <div class="content ant-row code-box">
+        <r-tabs active-index="1" id="test">
+            <r-tab-pane tab="登录校验" index="1">
+                <p>最多可同时操作10个号码</p>
+                <div>
+                    <div class="content_l">
+                        <h3 class="content_left_tt">批量输入号码(最多10个)(一行一个号码)</h3>
+                        <div class="content_l_col">
+                            <textarea class="content_l_textarea" id="wphones" rows="10"></textarea>
+                            <div class="content_l_colr">
+                                <button type="button" class="rab-btn  rab-btn-lg" onclick="extracts()">提取号码</button>&nbsp;=>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content_r">
+                        <div class="content_r_div1">
+                            <button type="button" class="rab-btn" style="margin-left: 170px" onclick="sendAll()">一键发送>></button>
+                        </div>
+												<div id="treeBox"></div>
+
+                        <div class="content_r_list">
+                            <div class="content_r_li1">
+                                <span class="content_r_li1_numb">1.</span>
+                                <input placeholder="请输入账户" class="content_r_li1_input phone"  style="width: 140px">
+                                <button type="button" class="rab-btn sends" onclick="send(0)">发送验证码</button>
+                            </div>
+                            <div class="content_r_li2">
+                                <input placeholder="验证码" class="content_r_li1_input smsCode" style="width: 100px;">&nbsp;&nbsp;
+                                <input placeholder="门店" class="content_r_li1_input store" onfocus="treeBox(this)" style="width: 140px">&nbsp;&nbsp;
+                                <!--<r-divider type="vertical"></r-divider>-->
+                                <button type="button" class="rab-btn" onclick="login(0)">登录</button>
+                            </div>
+                            <div class="content_r_li3">
+                                状态:<span class="statusMessage">等待发送验证码</span>
+                            </div>
+                        </div>
+                        <div class="content_r_list">
+                            <div class="content_r_li1">
+                                <span class="content_r_li1_numb">2.</span>
+                                <input placeholder="请输入账户" class="content_r_li1_input phone"  style="width: 140px">
+                                <button type="button" class="rab-btn send" onclick="send(1)">发送验证码</button>
+                            </div>
+                            <div class="content_r_li2">
+                                <input placeholder="验证码" class="content_r_li1_input smsCode" style="width: 100px;">&nbsp;&nbsp;
+                                <input placeholder="门店" class="content_r_li1_input store" onfocus="treeBox(this)" style="width: 140px">&nbsp;&nbsp;
+                                <!--<r-divider type="vertical"></r-divider>-->
+                                <button type="button" class="rab-btn" onclick="login(1)">登录</button>
+                            </div>
+                            <div class="content_r_li3">
+                                状态:<span class="statusMessage">等待发送验证码</span>
+                            </div>
+                        </div>
+                        <div class="content_r_list">
+                            <div class="content_r_li1">
+                                <span class="content_r_li1_numb">3.</span>
+                                <input placeholder="请输入账户" class="content_r_li1_input phone"  style="width: 140px">
+                                <button type="button" class="rab-btn send" onclick="send(2)">发送验证码</button>
+                            </div>
+                            <div class="content_r_li2">
+                                <input placeholder="验证码" class="content_r_li1_input smsCode" style="width: 100px;">&nbsp;&nbsp;
+                                <input placeholder="门店" class="content_r_li1_input store" onfocus="treeBox(this)" style="width: 140px">&nbsp;&nbsp;
+                                <!--<r-divider type="vertical"></r-divider>-->
+                                <button type="button" class="rab-btn" onclick="login(2)">登录</button>
+                            </div>
+                            <div class="content_r_li3">
+                                状态:<span class="statusMessage">等待发送验证码</span>
+                            </div>
+                        </div>
+                        <div class="content_r_list">
+                            <div class="content_r_li1">
+                                <span class="content_r_li1_numb">4.</span>
+                                <input placeholder="请输入账户" class="content_r_li1_input phone"  style="width: 140px">
+                                <button type="button" class="rab-btn send" onclick="send(3)">发送验证码</button>
+                            </div>
+                            <div class="content_r_li2">
+                                <input placeholder="验证码" class="content_r_li1_input smsCode" style="width: 100px;">&nbsp;&nbsp;
+                                <input placeholder="门店" class="content_r_li1_input store" onfocus="treeBox(this)" style="width: 140px">&nbsp;&nbsp;
+                                <!--<r-divider type="vertical"></r-divider>-->
+                                <button type="button" class="rab-btn" onclick="login(3)">登录</button>
+                            </div>
+                            <div class="content_r_li3">
+                                状态:<span class="statusMessage">等待发送验证码</span>
+                            </div>
+                        </div>
+                        <div class="content_r_list">
+                            <div class="content_r_li1">
+                                <span class="content_r_li1_numb">5.</span>
+                                <input placeholder="请输入账户" class="content_r_li1_input phone"  style="width: 140px">
+                                <button type="button" class="rab-btn send" onclick="send(4)">发送验证码</button>
+                            </div>
+                            <div class="content_r_li2">
+                                <input placeholder="验证码" class="content_r_li1_input smsCode" style="width: 100px;">&nbsp;&nbsp;
+                                <input placeholder="门店" class="content_r_li1_input store" onfocus="treeBox(this)" style="width: 140px">&nbsp;&nbsp;
+                                <!--<r-divider type="vertical"></r-divider>-->
+                                <button type="button" class="rab-btn" onclick="login(4)">登录</button>
+                            </div>
+                            <div class="content_r_li3">
+                                状态:<span class="statusMessage">等待发送验证码</span>
+                            </div>
+                        </div>
+                        <div class="content_r_list">
+                            <div class="content_r_li1">
+                                <span class="content_r_li1_numb">6.</span>
+                                <input placeholder="请输入账户" class="content_r_li1_input phone"  style="width: 140px">
+                                <button type="button" class="rab-btn send" onclick="send(5)">发送验证码</button>
+                            </div>
+                            <div class="content_r_li2">
+                                <input placeholder="验证码" class="content_r_li1_input smsCode" style="width: 100px;">&nbsp;&nbsp;
+                                <input placeholder="门店" class="content_r_li1_input store" onfocus="treeBox(this)" style="width: 140px">&nbsp;&nbsp;
+                                <!--<r-divider type="vertical"></r-divider>-->
+                                <button type="button" class="rab-btn" onclick="login(5)">登录</button>
+                            </div>
+                            <div class="content_r_li3">
+                                状态:<span class="statusMessage">等待发送验证码</span>
+                            </div>
+                        </div>
+                        <div class="content_r_list">
+                            <div class="content_r_li1">
+                                <span class="content_r_li1_numb">7.</span>
+                                <input placeholder="请输入账户" class="content_r_li1_input phone"  style="width: 140px">
+                                <button type="button" class="rab-btn send" onclick="send(6)">发送验证码</button>
+                            </div>
+                            <div class="content_r_li2">
+                                <input placeholder="验证码" class="content_r_li1_input smsCode" style="width: 100px;">&nbsp;&nbsp;
+                                <input placeholder="门店" class="content_r_li1_input store" onfocus="treeBox(this)" style="width: 140px">&nbsp;&nbsp;
+                                <!--<r-divider type="vertical"></r-divider>-->
+                                <button type="button" class="rab-btn" onclick="login(6)">登录</button>
+                            </div>
+                            <div class="content_r_li3">
+                                状态:<span class="statusMessage">等待发送验证码</span>
+                            </div>
+                        </div>
+
+                        <div class="content_r_list">
+                            <div class="content_r_li1">
+                                <span class="content_r_li1_numb">8.</span>
+                                <input placeholder="请输入账户" class="content_r_li1_input phone"  style="width: 140px">
+                                <button type="button" class="rab-btn send" onclick="send(7)">发送验证码</button>
+                            </div>
+                            <div class="content_r_li2">
+                                <input placeholder="验证码" class="content_r_li1_input smsCode" style="width: 100px;">&nbsp;&nbsp;
+                                <input placeholder="门店" class="content_r_li1_input store" onfocus="treeBox(this)" style="width: 140px">&nbsp;&nbsp;
+                                <!--<r-divider type="vertical"></r-divider>-->
+                                <button type="button" class="rab-btn" onclick="login(7)">登录</button>
+                            </div>
+                            <div class="content_r_li3">
+                                状态:<span class="statusMessage">等待发送验证码</span>
+                            </div>
+                        </div>
+                        <div class="content_r_list">
+                            <div class="content_r_li1">
+                                <span class="content_r_li1_numb">9.</span>
+                                <input placeholder="请输入账户" class="content_r_li1_input phone"  style="width: 140px">
+                                <button type="button" class="rab-btn send" onclick="send(8)">发送验证码</button>
+                            </div>
+                            <div class="content_r_li2">
+                                <input placeholder="验证码" class="content_r_li1_input smsCode" style="width: 100px;">&nbsp;&nbsp;
+                                <input placeholder="门店" class="content_r_li1_input store" onfocus="treeBox(this)" style="width: 140px">&nbsp;&nbsp;
+                                <!--<r-divider type="vertical"></r-divider>-->
+                                <button type="button" class="rab-btn" onclick="login(8)">登录</button>
+                            </div>
+                            <div class="content_r_li3">
+                                状态:<span class="statusMessage">等待发送验证码</span>
+                            </div>
+                        </div>
+                        <div class="content_r_list">
+                            <div class="content_r_li1">
+                                <span class="content_r_li1_numb">10.</span>
+                                <input placeholder="请输入账户" class="content_r_li1_input phone"  style="width: 140px">
+                                <button type="button" class="rab-btn send" onclick="send(9)">发送验证码</button>
+                            </div>
+                            <div class="content_r_li2">
+                                <input placeholder="验证码" class="content_r_li1_input smsCode" style="width: 100px;">&nbsp;&nbsp;
+                                <input placeholder="门店" class="content_r_li1_input store" onfocus="treeBox(this)" style="width: 140px">&nbsp;&nbsp;
+                                <!--<r-divider type="vertical"></r-divider>-->
+                                <button type="button" class="rab-btn" onclick="login(9)">登录</button>
+                            </div>
+                            <div class="content_r_li3">
+                                状态:<span class="statusMessage">等待发送验证码</span>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div style="clear:both "></div>
+                </div>
+
+            </r-tab-pane>
+            <r-tab-pane tab="查询缓存有效性" index="2">
+
+                <p class="warning_text">建议每周期内至少查询一次！！</p>
+
+                <p>查询可能会有延时，请耐心等待</p>
+                <div class="tab2_box">
+                    <div class="tab2_box_l">
+                        <h3 class="tab2_box_h">批量输入号码(一行一个号码)</h3>
+                        <div class="tab2_con">
+                            <textarea class="tab2_box_text1" id="ck_phones">
+
+                            </textarea>
+                            <div class="tab2_box_lc">
+                                <button type="button" class="rab-btn  rab-btn-lg" onclick="ck()">批量查询</button>&nbsp;=>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab2_box_r">
+                        <div>
+                            <h3 class="tab2_box_h">查询结果</h3>
+                            <div class="tab2_con">
+                                <textarea class="tab2_box_text2" id="ck_result" readonly>
+
+                                </textarea>
+                                <div class="tab2_box_rc">
+                                    <button type="button" class="rab-btn rab-btn-lgrab-btn btn copy" id="copy">一键复制</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="clear:both "></div>
+                </div>
+            </r-tab-pane>
+        </r-tabs>
+    </div>
+</body>
+
+
+    ​
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/niu-grandpa/rabbit-ui@1.6.0/dist/rabbit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/zenorocha/clipboard.js@v1.5.5/dist/clipboard.js"></script>
+    <script src="stores.js"></script>
+
+    <script>
+        var clipboard = new Clipboard('#copy.btn', {
+            text: function() {
+                return $("#resultUsernames").val();
+            }
+        });
+        clipboard.on('success',function(e) {
+            alert("复制成功");
+        });
+        clipboard.on('error',function(e) {
+            console.log(e);
+        });
+
+        const tabs = new Rabbit.Tabs();
+        tabs.config('#test').events({
+            onClick: (index) => {
+                console.log('当前点击的tab', index);
+            }
+        });
+
+        function Toast(msg,duration){
+            duration=isNaN(duration)?3000:duration;
+            var m = document.createElement('div');
+            m.innerHTML = msg;
+
+            m.style.cssText="width: 60%;min-width: 150px;opacity: 0.7;height: 30px;color: rgb(255, 255, 255);line-height: 30px;text-align: center;border-radius: 5px;position: fixed;bottom: 10%;left: 20%;z-index: 999999;background: rgb(0, 0, 0);font-size: 12px;";
+
+            document.body.appendChild(m);
+            setTimeout(function() {
+                var d = 0.5;
+                m.style.webkitTransition = '-webkit-transform ' + d + 's ease-in, opacity ' + d + 's ease-in';
+                m.style.opacity = '0';
+                setTimeout(function() { document.body.removeChild(m) }, d * 1000);
+            }, duration);
+        }
+
+        function extracts(){
+            var wphones = $("#wphones").val().split("\n");
+            var phones = new Array();
+            wphones.forEach(function(phone) {
+                phone = phone.trim();
+                phone = phone.match(/^(1[3|4|5|6|7|8|9][0-9]{9})/g);
+                if(phone && phone.length>0){
+                    phones.push(phone[0]);
+                }
+            });
+
+            if(phones.length > 10){
+                alert("已超"+phones.length+"个号码最大限制!");
+            }else{
+                Toast("已识别"+phones.length+"个号码",3000);
+                $(".phone").val("");
+                $.each(phones,function (index,phone) {
+                   $(".phone:eq("+index+")").val(phone);
+                });
+            }
+        }
+
+
+        function sendAll(){
+            $.each($('.phone'),function(index,item){
+                let phone = $(item).val().trim();
+                if(!phone){
+                    return;
+                }
+                if(phone && !(/^1[3|4|5|6|7|8|9][0-9]{9}$/.test(phone))){
+                    $(".statusMessage:eq("+index+")").text("号码格式不正确").css("color","orange");
+                    return;
+                }else{
+                    send(index);
+                }
+            });
+        }
+
+        function send(num){
+            var phone = $(".phone:eq("+num+")").val().trim();
+            if(!(/^1[3|4|5|6|7|8|9][0-9]{9}$/.test(phone))){
+                alert("序号:"+(num+1)+",输入的号码格式错误!");
+                return;
+            }
+            phone = phone.match(/^(1[3|4|5|6|7|8|9][0-9]{9})/g);
+            if(phone && phone.length>0){
+                $.ajax({
+                    type: "get",
+                    url: "/send.html",
+                    data: {mobile:phone[0]},
+                    dataType: "json",
+                    success: function (result) {
+                    	var msg = "";
+                    	if (flag == 1) {
+                        msg = "验证码已发送,请输入验证码登录！";
+                        $(".smsCode:eq("+num+")").css("display","block");
+											} else if (flag == -1) {
+                        msg = "验证码发送失败,请稍后再试！";
+											} else if (flag == 1000) {
+                        msg = "帐号未审核，请先提交审核！";
+											} else {
+                        msg = "验证异常";
+											}
+                      $(".statusMessage:eq("+num+")").text(msg).css("color","red");
+                    }
+                });
+            } else {
+                alert("序号:"+(num+1)+",输入格式有误!");
+            }
+        }
+
+        function login(num){
+            var phone = $(".phone:eq("+num+")").val().trim();
+            if(!(/^1[3|4|5|6|7|8|9][0-9]{9}$/.test(phone))){
+                alert("序号:"+(num+1)+",输入的号码格式错误!");
+                return;
+            }
+            var smsCode = $(".smsCode:eq("+num+")").val().trim();
+            if(!(/^[0-9]{6}$/.test(smsCode))){
+                alert("序号:"+(num+1)+",输入的验证码格式错误!");
+                return;
+            }
+            phone = phone.match(/^(1[3|4|5|6|7|8|9][0-9]{9})/g);
+            smsCode = smsCode.match(/^([0-9]{6})/g);
+            if(phone && smsCode && phone.length>0 && smsCode.length>0){
+                $.ajax({
+                    type: "get",
+                    url: "login.html",
+                    data: {mobile:phone[0],code:smsCode[0]},
+                    dataType: "json",
+                    success: function (result) {
+	                    	var msg = "";
+	                    	if (flag == 1) {
+	                        msg = "登录成功，已提交！";
+												} else if (flag == -1) {
+	                        msg = "登录失败！";
+												} else if (flag == 1000) {
+                        	msg = "帐号未审核，请先提交审核！";
+												} else {
+	                        msg = "登录异常";
+												}
+                        Toast(phone+","+msg,3000);
+                        $(".statusMessage:eq("+num+")").text(msg).css("color","red");
+                    }
+                });
+            }else{
+                alert("序号:"+(num+1)+",输入格式有误!");
+            }
+        }
+
+        function ck(){
+            var ck_phones = new Array();
+            $("#ck_phones").val().split("\n").forEach(function(phone) {
+                phone = phone.trim();
+                phone = phone.match(/^(1[3|4|5|6|7|8|9][0-9]{9})/g);
+                if(phone && phone.length>0){
+                    ck_phones.push(phone[0]);
+                }
+            });
+
+            if(ck_phones.length > 100){
+                alert("检测到"+ck_phones.length+"个号码,超过最大限制!");
+            }else{
+                Toast("检测到"+ck_phones.length+"个号码",3000);
+                $("#ck_result").val("");
+                $("#ck_result").val(ck_phones.join("----查询中,耐心等待\n")+"----查询中,耐心等待\n");
+                $.ajax({
+                    type: "post",
+                    url: "r.html",
+                    data: {tels:ck_phones.join(",")},
+                    success: function (result) {
+                        String task_token = result;
+                        for(;;){
+					                if(/查询中/.test($("#ck_result").val())){
+					                    $.ajax({
+					                        type: "get",
+					                        url: "status.html",
+					                        data: {task_token:task_token},
+					                        success: function (r) {
+					                            if(r == -1){
+					                            } else {
+					                                $("#ck_result").val(result);
+					                            }
+					                        }
+					                    });
+					                }
+                        }
+                    }
+                });
+            }
+        }
+
+				var city_location = decodeURIComponent(window.location.hash.substring(1));
+				function treeBox(el) {
+				    $(".treeBox").css({'display':'block'});
+				    var data = stores;
+				    //判断参数是否存在
+				    var wLv1 = 160;
+				    var wLv2 = 160;
+				    var h = 700;
+				    var wBox = wLv1 + wLv2;
+				    // 根据数据结构构建DOM
+				    var lv_1 = '';
+				    var lv_2_parent = '';
+				    for (var k in data) {
+				        lv_1 += '<a class="lv1'+(k == city_location?" tree-active":"")+'" data-id="'+ k +'">'+ k +'</a>';
+				        lv_2_parent += '<div class="lv2-parent'+(k == city_location?" tree-show":"")+'" data-parent="'+ k +'"></div>'
+				    }
+				    var html = '';
+				    html += '<div class="treeBox" style="width:'+ wBox +'px;">';//判断是否构建常用DOM
+				    html += '<table cellspacing="0"><tr>';
+				    html += '<td width="' + wLv1 + '" style="border-left:none;"><div class="tree tree-lv1" style="height:'+ h + 'px;">' + lv_1 + '</div></td>';
+				    html += '<td width="' + wLv2 + '"><div class="tree tree-lv2" style="height:'+ h + 'px;">'+ lv_2_parent +'</div></td>';
+				    html += '</tr></table>';
+				    html += '<div class="tree-send-val"><a class="tree-btn tree-close">关闭</a><a class="tree-btn tree-confirm">确定</a></div>';
+				    html += '</div>';
+				    $("#treeBox").append(html);
+				    var n = 0;
+				    for (var k in data) {
+				    	  n++;
+				        var lv_2_son = '';
+				        for (var i in data[k]) {
+				            lv_2_son += '<label><input type="checkbox" class="lv3" value="' + data[k][i].id +'" data-name="' + data[k][i].name + '" data-parent="' + k + '"><span>'+ data[k][i].name +'</span></label>'
+				        }
+				        $(".lv2-parent").eq(n-1).append(lv_2_son)
+				    }
+				    //默认每列第一个显示以及选中
+				    if('' == city_location){
+				    	$(".lv2-parent").eq(0).addClass("tree-show");
+				    	$(".lv1").eq(0).addClass("tree-active");
+				    }
+				    //关闭事件
+				    $(".tree-close").on('click',function () {
+				        $(".treeBox").css({'display':'none'})
+				    });
+				    // 点击事件 根据绑定的自定义属性做为参数 显示对应的列表
+				    $(".lv1").on('click',function () {
+				        var v = $(this).data('id');
+				        $(".lv2-parent").each(function (index) {
+				            if($(this).data('parent') == v) {
+				                $(".lv2-parent").removeClass("tree-show");
+				                $(".lv2-parent").eq(index).addClass("tree-show");
+				            }
+				        });
+				        $(".lv1").removeClass("tree-active");
+				        $(this).addClass("tree-active");
+				        $(".tree").scrollTop(0);
+				    })
+				    //以数组的形式返回选中的值
+				    $(".tree-confirm").on('click',function () {
+				        selected = [];//每次清空数组
+				        strSelected = '';//每次清空字符窜
+				        var select_stores = '';
+				        $("input:checked").each(function () {
+				            var id     = $(this).val();
+				            var parent = $(this).data('parent');
+				            if(select_stores.indexOf(parent) < 0){
+				               if(select_stores.length > 0) select_stores+='#';
+				               select_stores += parent;          
+				            }                                       
+				            select_stores += '&'+id;                
+				        });                                         
+				        el.val(select_stores);  
+				        $(".treeBox").css({'display':'none'})     
+				    })
+				}
+    </script>
+
+    ​
+
+</html>
