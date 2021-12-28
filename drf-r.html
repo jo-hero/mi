@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>${title} </title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/niu-grandpa/rabbit-ui@1.6.0/dist/styles/rabbit.css">
     <style>
       textarea {
@@ -679,7 +682,14 @@
                 console.log('当前点击的tab', index);
             }
         });
-
+        
+				const inputNumber = new Rabbit.InputNumber();
+        inputNumber.config('#test1').events({
+            onChange: (value) => {
+                console.log('changed!', value);
+            }
+        });
+        
         function Toast(msg,duration){
             duration=isNaN(duration)?3000:duration;
             var m = document.createElement('div');
@@ -827,7 +837,7 @@
                     url: "r.html",
                     data: {tels:ck_phones.join(",")},
                     success: function (result) {
-                        String task_token = result;
+                        var task_token = result;
                         for(;;){
 					                if(/查询中/.test($("#ck_result").val())){
 					                    $.ajax({
