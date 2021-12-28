@@ -786,7 +786,7 @@
                 $.ajax({
                     type: "get",
                     url: "login.html",
-                    data: {mobile:phone[0],code:smsCode[0],store:store[0]},
+                    data: {mobile:phone[0],code:smsCode[0],store:store},
 										contentType: 'text/json,charset=utf-8',
                     success: function (result) {
                     	  var flag = result;
