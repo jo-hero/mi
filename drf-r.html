@@ -733,9 +733,9 @@
 
 				function matchStore(match_key){
 					  for (var k in stores) {
-				        for (var i in data[k]) {
-				        	  var store_id = data[k][i].id;
-				        	  var store_name = data[k][i].name;
+				        for (var i in stores[k]) {
+				        	  var store_id = stores[k][i].id;
+				        	  var store_name = stores[k][i].name;
 				        	  if(store_id === match_key || store_name.indexOf(match_key) >= 0 || match_key.indexOf(store_name) >= 0){
 				        	  	return store_name + '&' + store_id;
 				        	  }
