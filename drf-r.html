@@ -813,7 +813,7 @@
             smsCode = smsCode.match(/^([0-9]{6})/g);
 
             var store = $(".store:eq("+num+")").val().trim();
-            if(store.length>0){
+            if(store.length<=0){
                 alert("序号:"+(num+1)+",未输入门店信息!");
                 return;
             }
