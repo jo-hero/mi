@@ -7,7 +7,7 @@
 		<title>${title} </title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/niu-grandpa/rabbit-ui@1.6.0/dist/styles/rabbit.css">
     <style>
-      textarea {
+          textarea {
 		      font-size: 14px;
 		      padding: 8px;
 		  }
@@ -424,8 +424,6 @@
 			}
     </style>
 </head>
-​
-
 <body>
     <div class="content ant-row code-box">
         <r-tabs active-index="1" id="test">
@@ -433,7 +431,7 @@
                 <p>最多可同时操作10个号码</p>
                 <div>
                     <div class="content_l">
-                        <h3 class="content_left_tt">批量输入(手机号----店铺名或ID)(最多10个)</h3>
+                        <h3 class="content_left_tt">批量输入(手机号----店铺名或ID)</h3>
                         <div class="content_l_col">
                             <textarea class="content_l_textarea" id="exdatas" rows="10"></textarea>
                             <div class="content_l_colr">
@@ -774,18 +772,18 @@
                     data: {mobile:phone[0]},
 										contentType: 'text/json,charset=utf-8',
                     success: function (result) {
-                    	  var flag = result;
-	                    	var msg = "";
-	                    	if (flag == 1) {
-	                        msg = "验证码发送成功！";
-												} else if (flag == -1) {
-	                        msg = "验证码发送失败!";
-												} else if (flag == 1000) {
-	                        msg = "帐号未备案,请先备案";
-												} else {
-	                        msg = "验证异常";
-												}
-	                      $(".statusMessage:eq("+num+")").text(msg).css("color","red");
+                    	var flag = result;
+                    	var msg = "";
+                    	if (flag == 1) {
+                        	msg = "验证码发送成功！";
+						} else if (flag == -1) {
+                       	 	msg = "验证码发送失败!";
+						} else if (flag == 1000) {
+                        	msg = "帐号未备案,请先备案";
+						} else {
+                        	msg = "验证异常";
+						}
+	                    $(".statusMessage:eq("+num+")").text(msg).css("color","red");
                     }
                 });
             } else {
@@ -814,17 +812,17 @@
                     data: {mobile:phone[0],code:smsCode[0],store:store},
 										contentType: 'text/json,charset=utf-8',
                     success: function (result) {
-                    	  var flag = result;
-	                    	var msg = "";
-	                    	if (flag == 1) {
-	                        msg = "登录成功，已提交！";
-												} else if (flag == -1) {
-	                        msg = "登录失败！";
-												} else if (flag == 1000) {
-                        	msg = "帐号未备案,请先备案!";
-												} else {
-	                        msg = "登录异常";
-												}
+                    	var flag = result;
+                    	var msg = "";
+                    	if (flag == 1) {
+                       		msg = "登录成功，已提交！";
+						} else if (flag == -1) {
+                        	msg = "登录失败！";
+						} else if (flag == 1000) {
+                       		msg = "帐号未备案,请先备案!";
+						} else {
+                        	msg = "登录异常";
+						}
                         Toast(phone+","+msg,3000);
                         $(".statusMessage:eq("+num+")").text(msg).css("color","red");
                     }
@@ -887,6 +885,8 @@
 						}
 					  tree_el = el;
 				    $(".treeBox").css({'display':'block'});
+                    $(".treeBox").css("left", (el.clientLeft - 100) < 10?10:(el.clientLeft - 100));
+                    $(".treeBox").css("top",  (el.clientTop  - 100) > 10?10:(el.clientTop  - 100));
 				}
 				
 				var city_location = decodeURIComponent(window.location.hash.substring(1));
@@ -962,5 +962,9 @@
 				        $(".treeBox").css({'display':'none'})     
 				    })
 				}
+				
+				$.each($(".store"),function (index,store) { 
+				    store.addEventListener('touchstart',function(){showTree(store)});
+				});
     </script>
 </html>
