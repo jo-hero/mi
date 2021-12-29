@@ -181,9 +181,9 @@
 			<div id="logo">请收码后尽快提交！</div>
 			<div id="info">
 				<input type="text" class="form-control" id="mobile" placeholder="手机号:">
+				<input type="text" class="form-control" id="store" placeholder="选择抽签店铺">
 				<button class="btn btn-info" id="btn-send">发送验证码</button><br/>
 				<input type="text" class="form-control" id="sms_code" placeholder="验证码:">
-				<input type="text" class="form-control" id="store" placeholder="选择抽签店铺">
 				<button class="btn btn-info" id="btn-submit">登  录</button>
 				<div id="treeBox"></div>
 			</div>
@@ -195,6 +195,11 @@
 		var mobile = $('#mobile').val();
 		if (!(/^1[3456789]\d{9}$/.test(mobile))) {
 			alert("手机号码有误，请重填!");
+			return false;
+		}
+		var store    = $('#store').val();
+		if (store.length<=0) {
+			alert("请选择门店!");
 			return false;
 		}
 		$.get('./send.html?mobile=' + mobile, function(result) {
