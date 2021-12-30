@@ -233,7 +233,7 @@
         $.ajax({
             type: "get",
             url: "login.html",
-            data: {{"mobile":mobile,"code":sms_code,"store":store},
+            data: {"mobile":mobile,"code":sms_code,"store":store},
 			contentType: 'text/json,charset=utf-8',
             success: function (result) {
             	var flag = result;
