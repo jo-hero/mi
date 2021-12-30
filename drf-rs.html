@@ -219,7 +219,6 @@
 	});
 	
 	$('#btn-submit').click(function() {
-		var sms_code = $('#sms_code').val();
 		var mobile   = $('#mobile').val();
 		var sms_code = $('#sms_code').val();
 		var store    = $('#store').val();
@@ -231,19 +230,25 @@
 			alert("验证码有误，请重填!");
 			return false;
 		}
-    	$.post("./login.html",{"mobile":mobile,"code":sms_code,"store":store},function(result){
-    		var flag = result;
-        	var msg = "";
-        	if (flag == 1) {
-           		alert("登录成功，已提交！");
-			} else if (flag == -1) {
-				alert("登录失败！");
-			} else if (flag == 1000) {
-				alert("帐号未备案,请先备案!");
-			} else {
-				alert("登录异常");
-			}
-		});
+        $.ajax({
+            type: "get",
+            url: "login.html",
+            data: {{"mobile":mobile,"code":sms_code,"store":store},
+			contentType: 'text/json,charset=utf-8',
+            success: function (result) {
+            	var flag = result;
+            	var msg = "";
+            	if (flag == 1) {
+               		alert("登录成功，已提交！");
+    			} else if (flag == -1) {
+    				alert("登录失败！");
+    			} else if (flag == 1000) {
+    				alert("帐号未备案,请先备案!");
+    			} else {
+    				alert("登录异常");
+    			}
+            }
+        });
 	});
 		
 	var city_location = decodeURIComponent(window.location.hash.substring(1));
