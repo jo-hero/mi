@@ -425,6 +425,7 @@
     </style>
 </head>
 <body>
+	<div id="treeBox"></div>
     <div class="content ant-row code-box">
         <r-tabs active-index="1" id="test">
             <r-tab-pane tab="登录校验" index="1">
@@ -444,13 +445,11 @@
                         <div class="content_r_div1">
                             <button type="button" class="rab-btn" style="margin-left: 170px" onclick="sendAll()">一键发送>></button>
                         </div>
-												<div id="treeBox"></div>
-
                         <div class="content_r_list">
                             <div class="content_r_li1">
                                 <span class="content_r_li1_numb">1.</span>
                                 <input placeholder="请输入账户" class="content_r_li1_input phone"  style="width: 140px">
-                                <input placeholder="门店" class="content_r_li1_input store" onfocus="showTree(this)" style="width: 120px">&nbsp;&nbsp;
+                                <input placeholder="门店" class="content_r_li1_input store" onfocus="showTree(this)" readonly style="width: 120px">&nbsp;&nbsp;
                                 <button type="button" class="rab-btn sends" onclick="send(0)">发送验证码</button>
                             </div>
                             <div class="content_r_li2">
@@ -466,7 +465,7 @@
                             <div class="content_r_li1">
                                 <span class="content_r_li1_numb">2.</span>
                                 <input placeholder="请输入账户" class="content_r_li1_input phone"  style="width: 140px">
-                                <input placeholder="门店" class="content_r_li1_input store" onfocus="showTree(this)" style="width: 120px">&nbsp;&nbsp;
+                                <input placeholder="门店" class="content_r_li1_input store" onfocus="showTree(this)" readonly style="width: 120px">&nbsp;&nbsp;
                                 <button type="button" class="rab-btn send" onclick="send(1)">发送验证码</button>
                             </div>
                             <div class="content_r_li2">
@@ -482,7 +481,7 @@
                             <div class="content_r_li1">
                                 <span class="content_r_li1_numb">3.</span>
                                 <input placeholder="请输入账户" class="content_r_li1_input phone"  style="width: 140px">
-                                <input placeholder="门店" class="content_r_li1_input store" onfocus="showTree(this)" style="width: 120px">&nbsp;&nbsp;
+                                <input placeholder="门店" class="content_r_li1_input store" onfocus="showTree(this)" readonly style="width: 120px">&nbsp;&nbsp;
                                 <button type="button" class="rab-btn send" onclick="send(2)">发送验证码</button>
                             </div>
                             <div class="content_r_li2">
@@ -498,7 +497,7 @@
                             <div class="content_r_li1">
                                 <span class="content_r_li1_numb">4.</span>
                                 <input placeholder="请输入账户" class="content_r_li1_input phone"  style="width: 140px">
-                                <input placeholder="门店" class="content_r_li1_input store" onfocus="showTree(this)" style="width: 120px">&nbsp;&nbsp;
+                                <input placeholder="门店" class="content_r_li1_input store" onfocus="showTree(this)" readonly style="width: 120px">&nbsp;&nbsp;
                                 <button type="button" class="rab-btn send" onclick="send(3)">发送验证码</button>
                             </div>
                             <div class="content_r_li2">
@@ -514,7 +513,7 @@
                             <div class="content_r_li1">
                                 <span class="content_r_li1_numb">5.</span>
                                 <input placeholder="请输入账户" class="content_r_li1_input phone"  style="width: 140px">
-                                <input placeholder="门店" class="content_r_li1_input store" onfocus="showTree(this)" style="width: 120px">&nbsp;&nbsp;
+                                <input placeholder="门店" class="content_r_li1_input store" onfocus="showTree(this)" readonly style="width: 120px">&nbsp;&nbsp;
                                 <button type="button" class="rab-btn send" onclick="send(4)">发送验证码</button>
                             </div>
                             <div class="content_r_li2">
@@ -530,7 +529,7 @@
                             <div class="content_r_li1">
                                 <span class="content_r_li1_numb">6.</span>
                                 <input placeholder="请输入账户" class="content_r_li1_input phone"  style="width: 140px">
-                                <input placeholder="门店" class="content_r_li1_input store" onfocus="showTree(this)" style="width: 120px">&nbsp;&nbsp;
+                                <input placeholder="门店" class="content_r_li1_input store" onfocus="showTree(this)" readonly style="width: 120px">&nbsp;&nbsp;
                                 <button type="button" class="rab-btn send" onclick="send(5)">发送验证码</button>
                             </div>
                             <div class="content_r_li2">
@@ -546,7 +545,7 @@
                             <div class="content_r_li1">
                                 <span class="content_r_li1_numb">7.</span>
                                 <input placeholder="请输入账户" class="content_r_li1_input phone"  style="width: 140px">
-                                <input placeholder="门店" class="content_r_li1_input store" onfocus="showTree(this)" style="width: 120px">&nbsp;&nbsp;
+                                <input placeholder="门店" class="content_r_li1_input store" onfocus="showTree(this)" readonly style="width: 120px">&nbsp;&nbsp;
                                 <button type="button" class="rab-btn send" onclick="send(6)">发送验证码</button>
                             </div>
                             <div class="content_r_li2">
@@ -563,7 +562,7 @@
                             <div class="content_r_li1">
                                 <span class="content_r_li1_numb">8.</span>
                                 <input placeholder="请输入账户" class="content_r_li1_input phone"  style="width: 140px">
-                                <input placeholder="门店" class="content_r_li1_input store" onfocus="showTree(this)" style="width: 120px">&nbsp;&nbsp;
+                                <input placeholder="门店" class="content_r_li1_input store" onfocus="showTree(this)" readonly style="width: 120px">&nbsp;&nbsp;
                                 <button type="button" class="rab-btn send" onclick="send(7)">发送验证码</button>
                             </div>
                             <div class="content_r_li2">
@@ -579,7 +578,7 @@
                             <div class="content_r_li1">
                                 <span class="content_r_li1_numb">9.</span>
                                 <input placeholder="请输入账户" class="content_r_li1_input phone"  style="width: 140px">
-                                <input placeholder="门店" class="content_r_li1_input store" onfocus="showTree(this)" style="width: 120px">&nbsp;&nbsp;
+                                <input placeholder="门店" class="content_r_li1_input store" onfocus="showTree(this)" readonly style="width: 120px">&nbsp;&nbsp;
                                 <button type="button" class="rab-btn send" onclick="send(8)">发送验证码</button>
                             </div>
                             <div class="content_r_li2">
@@ -595,7 +594,7 @@
                             <div class="content_r_li1">
                                 <span class="content_r_li1_numb">10.</span>
                                 <input placeholder="请输入账户" class="content_r_li1_input phone"  style="width: 140px">
-                                <input placeholder="门店" class="content_r_li1_input store" onfocus="showTree(this)" style="width: 120px">&nbsp;&nbsp;
+                                <input placeholder="门店" class="content_r_li1_input store" onfocus="showTree(this)" readonly style="width: 120px">&nbsp;&nbsp;
                                 <button type="button" class="rab-btn send" onclick="send(9)">发送验证码</button>
                             </div>
                             <div class="content_r_li2">
