@@ -203,17 +203,11 @@
 			return false;
 		}
 		$.get('./send.html?mobile=' + mobile, function(result) {
-			var flag = result;
-        	if (flag == 1) {
+           	alert(result.msg);
+			if (result.code == 0) {
 		    	$('#mobile').attr("disabled", "true");
 		    	$('#btn-send').attr("disabled", "true");
-				alert("验证码发送成功，请继续下面步骤！");
-			} else if (flag == -1) {
-				alert("验证码发送失败,请稍后再试！");
-			} else if (flag == 1000) {
-				alert("帐号未备案,请先备案！");
-			} else {
-				alert("验证异常");
+               	alert(result.msg);
 			}
 		});
 	});
@@ -236,16 +230,10 @@
             data: {"mobile":mobile,"code":sms_code,"store":store},
 			contentType: 'text/json,charset=utf-8',
             success: function (result) {
-            	var flag = result;
-            	var msg = "";
-            	if (flag == 1) {
-               		alert("登录成功，已提交！");
-    			} else if (flag == -1) {
-    				alert("登录失败！");
-    			} else if (flag == 1000) {
-    				alert("帐号未备案,请先备案!");
-    			} else {
-    				alert("登录异常");
+            	alert(result.msg);
+    			if (result.code == 0) {
+    		    	$('#mobile').attr("disabled", "false");
+    		    	$('#btn-send').attr("disabled", "false");
     			}
             }
         });

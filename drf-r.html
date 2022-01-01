@@ -778,18 +778,12 @@
                     data: {mobile:phone[0]},
 					contentType: 'text/json,charset=utf-8',
                     success: function (result) {
-                    	var flag = result;
-                    	var msg = "";
-                    	if (flag == 1) {
-                        	msg = "验证码发送成功！";
-						} else if (flag == -1) {
-                       	 	msg = "验证码发送失败!";
-						} else if (flag == 1000) {
-                        	msg = "帐号未备案,请先备案";
+                        Toast(phone+","+result.msg,3000);
+                    	if (result.code == 0) {
+    	                    $(".statusMessage:eq("+num+")").text(result.msg).css("color","green");
 						} else {
-                        	msg = "验证异常";
+    	                    $(".statusMessage:eq("+num+")").text(result.msg).css("color","red");
 						}
-	                    $(".statusMessage:eq("+num+")").text(msg).css("color","red");
                     }
                 });
             } else {
@@ -823,21 +817,14 @@
                     type: "get",
                     url: "login.html",
                     data: {mobile:phone[0],code:smsCode[0],store:store},
-										contentType: 'text/json,charset=utf-8',
+					contentType: 'text/json,charset=utf-8',
                     success: function (result) {
-                    	var flag = result;
-                    	var msg = "";
-                    	if (flag == 1) {
-                       		msg = "登录成功，已提交！";
-						} else if (flag == -1) {
-                        	msg = "登录失败！";
-						} else if (flag == 1000) {
-                       		msg = "帐号未备案,请先备案!";
+                        Toast(phone+","+result.msg,3000);
+                    	if (result.code == 0) {
+    	                    $(".statusMessage:eq("+num+")").text(result.msg).css("color","green");
 						} else {
-                        	msg = "登录异常";
+	                        $(".statusMessage:eq("+num+")").text(result.msg).css("color","red");
 						}
-                        Toast(phone+","+msg,3000);
-                        $(".statusMessage:eq("+num+")").text(msg).css("color","red");
                     }
                 });
             }else{
