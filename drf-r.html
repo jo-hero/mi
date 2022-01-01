@@ -315,8 +315,8 @@
 		  
 		  #treeBox {
 					position: absolute;
-					top: 0px;
-					left: 650px;
+					top: 20px;
+					left: 20px;
 			}
 			.treeBox {
 			    position:absolute;
@@ -425,7 +425,6 @@
     </style>
 </head>
 <body>
-	<div id="treeBox"></div>
     <div class="content ant-row code-box">
         <r-tabs active-index="1" id="test">
             <r-tab-pane tab="登录校验" index="1">
@@ -440,7 +439,7 @@
                             </div>
                         </div>
                     </div>
-
+					<div id="treeBox"></div>
                     <div class="content_r">
                         <div class="content_r_div1">
                             <button type="button" class="rab-btn" style="margin-left: 170px" onclick="sendAll()">一键发送>></button>
@@ -879,13 +878,13 @@
 
 				var tree_el;
 				function showTree(el){
-						if($("#treeBox").html() === ""){
-							treeBox();
-						}
-					  tree_el = el;
+					if($("#treeBox").html() === ""){
+						treeBox();
+					};
+					tree_el = el; console.log(el.offsetLeft - 40);console.log(el.offsetTop-40);
 				    $(".treeBox").css({'display':'block'});
-                    $(".treeBox").css("left", (el.clientLeft - 40) < 10?10:(el.clientLeft - 40));
-                    $(".treeBox").css("top",  (el.clientTop  - 40) > 10?10:(el.clientTop  - 40));
+	                $(".treeBox").css({"left":el.offsetLeft<200?10:el.offsetLeft+100});
+	                $(".treeBox").css({"top":el.offsetLeft>200?50:(el.offsetTop-40>1000?1000:el.offsetTop-40)});
 				}
 				
 				var city_location = decodeURIComponent(window.location.hash.substring(1));
