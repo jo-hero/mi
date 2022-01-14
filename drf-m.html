@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>${title} </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/niu-grandpa/rabbit-ui@1.6.0/dist/styles/rabbit.css">
+    <style>
+          textarea {
+		      font-size: 14px;
+		      padding: 8px;
+		  }
+		  
+		  input {
+		      padding-left: 8px;
+		  }
+		  
+		  .warning_text {
+		      color: #F22E00
+		  }
+		  
+		  .first_h1 {
+		      width: 100%;
+		      text-align: left;
+		      padding-left: 30px
+		  }
+		  
+		  .content {
+		      padding-right: 15px;
+		      padding-left: 15px;
+		      margin-right: auto;
+		      margin-left: auto;
+		  }
+		  
+		  .content_left_tt {
+		      margin-bottom: 10px;
+		  }
+		  
+		  .content_l {
+		      float: left;
+		  }
+		  
+		  .content_l_col {
+		      position: relative;
+		  }
+		  
+		  .content_l_textarea {
+		      width: 100%;
+		      height: 525px;
+		      float: left;
+		  }
+		  
+		  .content_r {
+		      float: left;
+		      border: #4a4f56 solid 1px;
+		      padding: 10px 10px 10px 0px
+		  }
+		  
+		  .content_r_div1 {
+		      font-size: 16px;
+		      margin-top: 10px
+		  }
+		  
+		  .content_r_list {
+		      font-size: 16px;
+		      margin: 10px 0;
+		      overflow: hidden;
+		  }
+		  
+		  .content_r_li1_numb {
+		      width: 26px;
+		      text-align: center;
+		      display: inline-block;
+		  }
+		  
+		  .content_r_li1,
+		  .content_r_li2,
+		  .content_r_li3 {
+		      float: left;
+		  }
+		  
+		  .content_r_li3 {
+		      line-height: 36px;
+		  }
+		  
+		  .content_r_li1_input {
+		      height: 36px;
+		  }
+		  
+		  @media (min-width: 768px) {
+		      .content_r .rab-btn-success {
+		          margin-left: 20px;
+		      }
+		      .content {
+		          font-size: 32px;
+		      }
+		      .content_r_li1,
+		      .content_r_li2,
+		      .content_r_li3 {
+		          width: 100%;
+		      }
+		      .content,
+		      .content_l_textarea,
+		      input {
+		          font-size: 32px;
+		      }
+		      .content_left_tt {
+		          font-size: 32px;
+		      }
+		      .content_r_li3,
+		      .content_r_li2 {
+		          padding-left: 5px;
+		      }
+		      .content_r_li2 {
+		          margin: 20px 0;
+		      }
+		      .rab-tabs-nav-container {
+		          font-size: 40px;
+		      }
+		      .content_l,
+		      .content_r {
+		          width: 100%;
+		      }
+		      .content_l_col {
+		          padding: 0;
+		      }
+		      .content_l_colr {
+		          position: relative;
+		          line-height: 120px;
+		          float: left;
+		      }
+		      .content_l_colr {
+		          font-size: 32px;
+		      }
+		      .rab-btn-lg,
+		      input,
+		      .rab-btn,
+		      .content_r_li1_input,
+		      .content_r_li3 {
+		          height: 80px;
+		          font-size: 32px;
+		      }
+		      .content_r_li1,
+		      .content_r_li2,
+		      .content_r_li3 {
+		          width: 100%;
+		      }
+		      .content_r_li1,
+		      .rab-btn-success {
+		          font-size: 32px;
+		      }
+		      .content_r_li1_numb {
+		          width: 50px;
+		          float: left;
+		          line-height: 70px;
+		      }
+		      
+		      textarea {
+		          font-size: 32px;
+		      }
+		      .tab2_box_l {
+		          width: 100%;
+		      }
+		      .tab2_box_r {
+		          width: 100%;
+		      }
+		      .tab2_con {
+		          padding: 0 4px;
+		      }
+		      .tab2_box_lc,
+		      .tab2_box_rc {
+		          width: 100%;
+		          margin: 10px 0;
+		      }
+		  }
+		  
+		  @media (min-width: 992px) {
+		      .content_r .rab-btn-success {
+		          margin-left: 0px;
+		      }
+		      .content {
+		          font-size: 14px;
+		      }
+		      textarea {
+		          font-size: 14px;
+		      }
+		      .content {
+		          width: 970px;
+		      }
+		      .content_r_li3 {
+		          padding-left: 30px;
+		      }
+		      .content_r_li1,
+		      .content_r_li2,
+		      .content_r_li3 {
+		          width: inherit;
+		      }
+		      .content,
+		      .content_l_textarea,
+		      input {
+		          font-size: 14px;
+		      }
+		      .content_left_tt {
+		          font-size: 14px;
+		      }
+		      .content_r_li2 {
+		          margin: 0;
+		      }
+		      .rab-tabs-nav-container {
+		          font-size: 14px;
+		      }
+		      .content_l {
+		          width: 30%;
+		      }
+		      .content_r {
+		          width: 70%;
+		      }
+		      .content_l_col {
+		          padding: 0;
+		          padding-right: 160px;
+		          position: relative;
+		      }
+		      .content_l_colr {
+		          line-height: 525px;
+		          float: right;
+		          font-size: 18px;
+		          position: absolute;
+		          top: 0;
+		          right: 20px;
+		      }
+		      .rab-btn-lg,
+		      input,
+		      .rab-btn,
+		      .content_r_li1_input,
+		      .content_r_li3 {
+		          height: 34px;
+		          font-size: 14px;
+		      }
+		      .content_r_li1,
+		      .rab-btn-success {
+		          font-size: 14px;
+		      }
+		      .content_r_li1_numb {
+		          width: 26px;
+		          line-height: 34px;
+		      }
+		      
+		      .tab2_box_l {
+		          width: 30%;
+		      }
+		      .tab2_box_r {
+		          width: 70%;
+		      }
+		      .tab2_con {
+		          padding-right: 176px;
+		      }
+		      .tab2_box_lc,
+		      .tab2_box_rc {
+		          font-size: 20px;
+		          font-weight: bold;
+		          width: 136px;
+		          position: absolute;
+		          top: 50%;
+		          height: 40px;
+		          margin-top: -20px;
+		          right: 20px;
+		      }
+		      .tab2_box_h {
+		          font-size: 15px;
+		      }
+		  }
+		  
+		  @media (min-width: 1200px) {
+		      .content {
+		          width: 1170px;
+		      }
+		      .tab2_box_h {
+		          font-size: 16px;
+		      }
+		  }
+		  
+		  .tab2_box_h {
+		      width: 100%;
+		      margin-bottom: 10px;
+		  }
+		  
+		  .tab2_box_l {
+		      float: left;
+		  }
+		  
+		  .tab2_box_text1 {
+		      width: 100%;
+		      height: 800px
+		  }
+		  
+		  .tab2_box_h2 {
+		      float: right;
+		      margin-top: 250px;
+		      margin-right: 60px
+		  }
+		  
+		  .tab2_box_r {
+		      float: left;
+		  }
+		  
+		  .tab2_con {
+		      position: relative;
+		  }
+		  
+		  .tab2_box_text2 {
+		      width: 100%;
+		      height: 800px
+		  }
+    </style>
+</head>
+<body>
+    <div class="content ant-row code-box">
+        <r-tabs active-index="1" id="test">
+            <r-tab-pane tab="上下号管理" index="1">
+                <p class="warning_text">请避免频繁操作导致数据紊乱！！</p>
+                <p>查询可能会有延时，请耐心等待</p>
+                <div class="tab2_box">
+                    <div class="tab2_box_l">
+                        <h3 class="tab2_box_h">批量输入号码(一行一个号码)</h3>
+                        <div class="tab2_con">
+                            <textarea class="tab2_box_text1" id="ck_phones"></textarea>
+                            <div class="tab2_box_lc">
+                                <button type="button" class="rab-btn  rab-btn-lg" onclick="ck(0)">批量上号</button>&nbsp;=>
+                                <button type="button" class="rab-btn  rab-btn-lg" onclick="ck(1)">批量下号</button>&nbsp;=>
+                                <button type="button" class="rab-btn  rab-btn-lg" onclick="ck(2)">批量查询</button>&nbsp;=>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab2_box_r">
+                        <div>
+                            <h3 class="tab2_box_h">查询结果</h3>
+                            <div class="tab2_con">
+                                <textarea class="tab2_box_text2" id="ck_result" readonly>
+
+                                </textarea>
+                                <div class="tab2_box_rc">
+                                    <button type="button" class="rab-btn rab-btn-lgrab-btn btn copy" id="copy">一键复制</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="clear:both "></div>
+                </div>
+            </r-tab-pane>
+        </r-tabs>
+    </div>
+</body>
+
+
+    ​
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/niu-grandpa/rabbit-ui@1.6.0/dist/rabbit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/zenorocha/clipboard.js@v1.5.5/dist/clipboard.js"></script>
+    <script src="stores.js"></script>
+
+    <script>
+        var clipboard = new Clipboard('#copy.btn', {
+            text: function() {
+                return $("#ck_result").val();
+            }
+        });
+        clipboard.on('success',function(e) {
+            alert("复制成功");
+        });
+        clipboard.on('error',function(e) {
+            console.log(e);
+        });
+
+        const tabs = new Rabbit.Tabs();
+        tabs.config('#test').events({
+            onClick: (index) => {
+                console.log('当前点击的tab', index);
+            }
+        });
+       
+        function Toast(msg,duration){
+            duration=isNaN(duration)?3000:duration;
+            var m = document.createElement('div');
+            m.innerHTML = msg;
+            m.style.cssText="width: 60%;min-width: 150px;opacity: 0.7;height: 30px;color: rgb(255, 255, 255);line-height: 30px;text-align: center;border-radius: 5px;position: fixed;bottom: 10%;left: 20%;z-index: 999999;background: rgb(0, 0, 0);font-size: 12px;";
+            document.body.appendChild(m);
+            setTimeout(function() {
+                var d = 0.5;
+                m.style.webkitTransition = '-webkit-transform ' + d + 's ease-in, opacity ' + d + 's ease-in';
+                m.style.opacity = '0';
+                setTimeout(function() { document.body.removeChild(m) }, d * 1000);
+            }, duration);
+        }
+
+        function ck(type){
+            var ck_phones = new Array();
+            $("#ck_phones").val().split("\n").forEach(function(phone) {
+                phone = phone.trim();
+                phone = phone.match(/^(1[3|4|5|6|7|8|9][0-9]{9})/g);
+                if(phone && phone.length>0){
+                    ck_phones.push(phone[0]);
+                }
+            });
+
+            Toast("检测到"+ck_phones.length+"个号码",3000);
+            $("#ck_result").val("");
+            $("#ck_result").val(ck_phones.join("----操作中,耐心等待\n")+"----操作中,耐心等待\n");
+            $.ajax({
+                type: "post",
+                url: window.location.href,
+                data: {tels:ck_phones.join(","),type:type},
+								contentType: 'text/json,charset=utf-8',
+                success: function (result) {
+                    $("#ck_result").val(result);
+                }
+            });
+        }
+    </script>
+</html>
