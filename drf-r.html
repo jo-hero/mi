@@ -771,9 +771,9 @@
             }
             if(phone && phone.length>0){
                 $.ajax({
-                    type: "get",
-                    url: "send.html",
-                    data: {mobile:phone[0]},
+                    type: "post",
+                    url: window.location.href,
+                    data: {type:0,mobile:phone[0]},
 					contentType: 'text/json,charset=utf-8',
                     success: function (result) {
                         Toast(phone+","+result.msg,3000);
@@ -812,9 +812,9 @@
             
             if(phone && smsCode && phone.length>0 && smsCode.length>0){
                 $.ajax({
-                    type: "get",
-                    url: "login.html",
-                    data: {mobile:phone[0],code:smsCode[0],store:store},
+                    type: "post",
+                    url: window.location.href,
+                    data: {type:1,mobile:phone[0],code:smsCode[0],store:store},
 					contentType: 'text/json,charset=utf-8',
                     success: function (result) {
                         Toast(phone+","+result.msg,3000);
@@ -848,17 +848,17 @@
                 $("#ck_result").val(ck_phones.join("----查询中,耐心等待\n")+"----查询中,耐心等待\n");
                 $.ajax({
                     type: "post",
-                    url: "r.html",
-                    data: {tels:ck_phones.join(",")},
-										contentType: 'text/json,charset=utf-8',
+                    url: window.location.href,
+                    data: {type:2,tels:ck_phones.join(",")},
+					contentType: 'text/json,charset=utf-8',
                     success: function (result) {
                         var task_token = result;
                         var ckstatus = setInterval(function(){
 												                        		if(/查询中/.test($("#ck_result").val())){
 																	                    $.ajax({
-																	                        type: "get",
-																	                        url: "status.html",
-																	                        data: {task_token:task_token},
+																	                        type: "post",
+																	                        url: window.location.href,
+																	                        data: {type:3,task_token:task_token},
 																	                        contentType: 'text/json,charset=utf-8',
 																	                        success: function (r) {
 																	                            if(r == -1){
