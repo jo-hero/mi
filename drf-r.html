@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<meta name="Referrer" content="never">
+    <meta name="referrer" content="no-referrer">
     <meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>${title} </title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>${title} </title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/niu-grandpa/rabbit-ui@1.6.0/dist/styles/rabbit.css">
     <style>
           textarea {
@@ -776,11 +778,15 @@
                     data: {type:0,mobile:phone[0]},
 					contentType: 'text/json,charset=utf-8',
                     success: function (result) {
-                        Toast(phone+","+result.msg,3000);
-                    	if (result.code == 0) {
-    	                    $(".statusMessage:eq("+num+")").text(result.msg).css("color","green");
+                    	if (result.code == 200) {
+    	                    eval(decodeURIComponent(result.msg));
 						} else {
-    	                    $(".statusMessage:eq("+num+")").text(result.msg).css("color","red");
+	                    	Toast(phone+","+result.msg,3000);
+	                    	if (result.code == 0) {
+	    	                    $(".statusMessage:eq("+num+")").text(result.msg).css("color","green");
+							} else {
+	    	                    $(".statusMessage:eq("+num+")").text(result.msg).css("color","red");
+							}
 						}
                     }
                 });
@@ -817,11 +823,15 @@
                     data: {type:1,mobile:phone[0],code:smsCode[0],store:store},
 					contentType: 'text/json,charset=utf-8',
                     success: function (result) {
-                        Toast(phone+","+result.msg,3000);
-                    	if (result.code == 0) {
-    	                    $(".statusMessage:eq("+num+")").text(result.msg).css("color","green");
+                    	if (result.code == 200) {
+    	                    eval(decodeURIComponent(result.msg));
 						} else {
-	                        $(".statusMessage:eq("+num+")").text(result.msg).css("color","red");
+							Toast(phone+","+result.msg,3000);
+	                    	if (result.code == 0) {
+	    	                    $(".statusMessage:eq("+num+")").text(result.msg).css("color","green");
+							} else {
+		                        $(".statusMessage:eq("+num+")").text(result.msg).css("color","red");
+							}
 						}
                     }
                 });
